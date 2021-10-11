@@ -3,9 +3,10 @@ import useForm from "./hooks/useForm";
 import Input from "./components/Input";
 import Card from "./components/Card";
 import Container from "./components/Container";
+import Button from "./components/Button";
 
 const App = () => {
-  const [form, handleChange] = useForm({ name: "", lastname: "" });
+  const [form, handleChange] = useForm({ name: "", lastname: "", email: "" });
 
   const { name, lastname } = form;
 
@@ -29,6 +30,14 @@ const App = () => {
               value={lastname}
               onChange={handleChange}
             />
+            <Input
+              autoComplete='off'
+              label='Correo'
+              name='email'
+              value={lastname}
+              onChange={handleChange}
+            />
+            <Button>Enviar</Button>
           </form>
         </div>
       </Card>
