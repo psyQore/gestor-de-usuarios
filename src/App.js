@@ -1,20 +1,26 @@
 import React from "react";
 import useForm from "./hooks/useForm";
+import Input from "./components/Input";
 
 const App = () => {
-  const [form, handleChange] = useForm({ name: "" });
+  const [form, handleChange] = useForm({ name: "", lastname: "" });
 
-  const { name } = form;
+  const { name, lastname } = form;
 
   console.log(form);
   return (
     <div>
       <form>
-        <input
-          type='text'
-          placeholder='Nombre..'
+        <Input
+          label='Nombre'
           name='name'
           value={name}
+          onChange={handleChange}
+        />
+        <Input
+          label='Apellido'
+          name='lastname'
+          value={lastname}
           onChange={handleChange}
         />
       </form>
